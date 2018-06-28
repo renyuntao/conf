@@ -10,5 +10,6 @@ syntax enable
 ":echo ">^.^<"
 
 :autocmd BufReadPost * exec "normal! `\""
-:autocmd BufNewFile *.sh 0r /home/renyuntao/.vim/sh_temp
 :autocmd BufWritePre * :set expandtab | retab   "将tab转换为空格
+:autocmd BufNewFile *.sh 0r /home/renyuntao/.vim/sh_temp
+:autocmd BufNewFile *.py 0r /home/renyuntao/.vim/py_temp
