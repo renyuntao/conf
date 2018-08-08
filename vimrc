@@ -10,6 +10,13 @@ syntax enable
 ":echo ">^.^<"
 
 :autocmd BufReadPost * exec "normal! `\""
-:autocmd BufWritePre * :set expandtab | retab   "将tab转换为空格
+":autocmd BufWritePre * :set expandtab | retab   "将tab转换为空格
 :autocmd BufNewFile *.sh 0r /home/renyuntao/.vim/sh_temp
 :autocmd BufNewFile *.py 0r /home/renyuntao/.vim/py_temp
+
+" autocmd! 清除AutoSaveFolds组中的命令
+augroup AutoSaveFolds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent loadview
+augroup END
